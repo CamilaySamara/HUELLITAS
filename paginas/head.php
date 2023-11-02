@@ -39,9 +39,9 @@
                 <div class="sidebar-brand-icon rotate-n-15">
 
                     <!-- logo de ;)  https://fontawesome.com/search aqui se descargan -->
-                    <i class="fas fa-solid fa-code"></i>
+                    <i class="fas fa-paw" style="color: #d54da3;"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Huellitas </div>
+                <div class="sidebar-brand-text mx-3">HUELLITAS </div>
             </a>
 
             <!-- Linea de separacion  -->
@@ -51,34 +51,215 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="../paginas/index.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-star" style="color: #f54792;"></i>
                     <span>Inicio</span></a>
             </li>
 
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
+
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Clientes -->
             <div class="sidebar-heading">
-                Empleado
+                clientes
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Menu de Clientes -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Empleados</span>
+                <a class="nav-link collapsed" href="../clientes/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-user-friends" style="color: #f54792;"></i>
+                    <span>clientes</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Datos del Empleado:</h6>
-                        <a class="collapse-item" href="../Empleados/index.php">Agregar Empleado</a>
 
-                    </div>
-                </div>
             </li>
 
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
+
+            <!-- Citas -->
+            <div class="sidebar-heading">
+            Citas
+            </div>
+
+            <!-- Menu de Citas -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../citas/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>citas</span>
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+             <!-- Macotas -->
+             <div class="sidebar-heading">
+             Macotas
+            </div>
+
+            <!-- Menu de Macotas -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../mascotas/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>macotas</span>
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+            
+             <!--razas -->
+             <div class="sidebar-heading">
+             razas
+            </div>
+
+            <!-- Menu de razas -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../razas/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>razas</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+                    
+             <!--historial clinico -->
+             <div class="sidebar-heading">
+             historial clinico
+            </div>
+
+            <!-- Menu de historial clinico -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../historial clinico/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>historial clinico</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+             <!--tipo de mascota -->
+             <div class="sidebar-heading">
+             tipo de mascota
+            </div>
+
+            <!-- Menu de tipo de mascota -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../tipo de mascota/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>tipo de mascota</span>
+
+                </a>
+
+            </li>
+
+            <!-- tipo de alimentacion -->
+            <hr class="sidebar-divider my-0">
+
+             <!--tipo de alimentacion -->
+             <div class="sidebar-heading">
+             tipo de alimentacion
+            </div>
+
+            <!-- Menu de tipo de alimentacion -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../tipo de alimentacion/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>tipo de alimentacion</span>
+
+                </a>
+
+            </li>
+
+            <!-- vacunas -->
+            <hr class="sidebar-divider my-0">
+
+             <!--vacunas -->
+             <div class="sidebar-heading">
+             vacunas
+            </div>
+
+            <!-- Menu de vacunas-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../vacunas/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>vacunas</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+             <!--tipo de vacunas -->
+             <div class="sidebar-heading">
+             tipo de vacunas
+            </div>
+
+            <!-- Menu de tipo de vacunas -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../tipo de vacunas/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>tipo de vacunas</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+
+            <!-- Menu de veterinario -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../veterinario/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>veterinario</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+           
+
+            <!-- Menu tratamiento -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../tratamiento/index.php" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <span>tratamiento</span>
+
+                </a>
+
+            </li>
+
+            <!-- Linea de separacion  -->
+            <hr class="sidebar-divider my-0">
+
+
+
+
+
+
+
+ 
 
         </ul>
         <!-- Final del Menu Izquierdo -->
@@ -112,6 +293,8 @@
                         </div>
                     </form>
 
+
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -128,10 +311,10 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 
 
-                                <a class="dropdown-item" href="../index.html" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar Sesion
+                                <a class="btn btn-user" href="../index.html">
+                                    <p>Cerrar Sesion</p>
                                 </a>
+
                             </div>
                         </li>
 

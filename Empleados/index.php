@@ -1,4 +1,4 @@
-<?php include 'codeveterinario.php'; ?>
+<?php include 'codeEmpleados.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del cliente</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Empleado</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -28,22 +28,20 @@
 
                             <div class="form-row">
 
-                                <div class="form-group col-md-12">
-                                    <label for="id_veterinario">id_veterinario</label> 
-                                    <input type="text" require name="id_veterinario " id="id_cliente" placeholder="" value="<?php echo $id_veterinario ?>">
-                                    <br>
-                                </div>  
+                                <!-- <label for="txtId">Id</label> -->
+                                <input type="hidden" require name="txtId" id="txtId" placeholder="" value="<?php echo $txtId ?>">
+                                <!-- <br> -->
 
                                 <div class="form-group col-md-12">
-                                    <label for="Nom_veterinario">Nombre(s)</label>
-                                    <input type="text" class="form-control" require name="Nom_veterinario" id="Nom_veterinario" placeholder="" value="<?php echo $Nom_clientes ?>">
+                                    <label for="txtNombre">Nombre(s)</label>
+                                    <input type="text" class="form-control" require name="txtNombre" id="txtNombre" placeholder="" value="<?php echo $txtNombre ?>">
                                     <br>
                                 </div>                               
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Telefono">Telefono </label>
-                                    <input type="text" class="form-control" require name="Telefono" id="Telefono" placeholder="" value="<?php echo $Telefono ?>">
+                                    <label for="txtApellidoP">Primer Apellido </label>
+                                    <input type="text" class="form-control" require name="txtApellidoP" id="txtApellidoP" placeholder="" value="<?php echo $txtApellidoP ?>">
 
                                 </div>
 
@@ -53,7 +51,18 @@
 
                                 </div>
 
-                              
+                                <div class="form-group col-md-12">
+                                    <label for="txtCorreo">Correo</label>
+                                    <input type="email" class="form-control" require name="txtCorreo" id="txtCorreo" placeholder="" value="<?php echo $txtCorreo ?>">
+                                    <br>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="foto">foto</label>
+                                    <!-- El atributo accept image .... solo acepta formatos de imagen -->
+                                    <input type="file" class="form-control" require accept="image/*" name="foto" id="foto" placeholder="" value="<?php echo $foto ?>">
+                                    <br>
+                                </div>
 
 
 
@@ -76,7 +85,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar cliente
+                Agregar Empleado
             </button>
 
 
@@ -110,36 +119,36 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listaveterinario tiene algun contenido */
-                    if ($listaveterinario->num_rows > 0) {
+                    /* Prefunto que si la variable listaEmpleados tiene algun contenido */
+                    if ($listaEmpleados->num_rows > 0) {
 
-                        foreach ($listaveterinario as $veterinario) {
+                        foreach ($listaEmpleados as $empleado) {
 
                     ?>
 
                             <tr>
 
                                 <td>
-                                    <img class="img-thumbnail" width="100px" src="../Imagenes/veterinario/<?php echo $veterinario['foto']; ?>" />
+                                    <img class="img-thumbnail" width="100px" src="../Imagenes/Empleados/<?php echo $empleado['foto']; ?>" />
 
                                 </td>
 
-                                <td> <?php echo $veterinario['id']        ?> </td>
-                                <td> <?php echo $veterinario['nombre']    ?> </td>
-                                <td> <?php echo $veterinario['apellidoP'] ?> </td>
-                                <td> <?php echo $veterinario['apellidoM'] ?> </td>
-                                <td> <?php echo $veterinario['correo']    ?> </td>
+                                <td> <?php echo $empleado['id']        ?> </td>
+                                <td> <?php echo $empleado['nombre']    ?> </td>
+                                <td> <?php echo $empleado['apellidoP'] ?> </td>
+                                <td> <?php echo $empleado['apellidoM'] ?> </td>
+                                <td> <?php echo $empleado['correo']    ?> </td>
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="txtId" value="<?php echo $veterinario['id'];  ?>">
-                                    <input type="hidden" name="txtNombre" value="<?php echo $veterinario['nombre'];  ?>">
-                                    <input type="hidden" name="txtApellidoP" value="<?php echo $veterinario['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $veterinario<['apellidoM'];  ?>">
-                                    <input type="hidden" name="txtCorreo" value="<?php echo $veterinario['correo'];  ?>">
-                                    <input type="hidden" name="foto" value="<?php echo $veterinario['foto'];  ?>">
+                                    <input type="hidden" name="txtId" value="<?php echo $empleado['id'];  ?>">
+                                    <input type="hidden" name="txtNombre" value="<?php echo $empleado['nombre'];  ?>">
+                                    <input type="hidden" name="txtApellidoP" value="<?php echo $empleado['apellidoP'];  ?>">
+                                    <input type="hidden" name="txtApellidoM" value="<?php echo $empleado['apellidoM'];  ?>">
+                                    <input type="hidden" name="txtCorreo" value="<?php echo $empleado['correo'];  ?>">
+                                    <input type="hidden" name="foto" value="<?php echo $empleado['foto'];  ?>">
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>
