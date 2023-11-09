@@ -2846,11 +2846,11 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #ce3e8d8f;
+  --bs-btn-bg: #dc3571;
   --bs-btn-border-color: #d65b98;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #be6f9b;
-  --bs-btn-hover-border-color: #c7296b93;
+  --bs-btn-hover-bg: #ff90cd;
+  --bs-btn-hover-border-color: #ff74ae;
   --bs-btn-focus-shadow-rgb: 255, 208, 38;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #fcaee2;
@@ -11061,10 +11061,10 @@ header.masthead .masthead-heading {
 }
 .portfolio-modal .close-modal {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  top: 3rem;
+  right: 3rem;
+  width: 6rem;
+  height: 6rem;
   cursor: pointer;
   background-color: transparent;
 }

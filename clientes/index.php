@@ -1,4 +1,4 @@
-<?php include 'codeclientes.php'; ?>
+<?php include 'codeClientes.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -40,12 +40,6 @@
                                     <br>
                                 </div>                               
 
-
-                                <div class="form-group col-md-12">
-                                    <label for="Telefono">numero documento </label>
-                                    <input type="text" class="form-control" require name="Num_doc" id="Num_doc" placeholder="" value="<?php echo $Num_doc ?>">
-
-                                </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="Nombre">Nombre </label>
@@ -138,10 +132,10 @@
 
                                 <td> <?php echo $clientes['id_cliente']        ?> </td>
                                 <td> <?php echo $clientes['Tipo_doc']    ?> </td>                               
-                                <td> <?php echo $clirntes['Nombre'] ?> </td>
+                                <td> <?php echo $clientes['Nombre'] ?> </td>
                                 <td> <?php echo $clientes['Apellido']    ?> </td>
                                 <td> <?php echo $clientes['Telefono'] ?> </td>
-                                <td> <?php echo $clirntes['Direccion'] ?> </td>
+                                <td> <?php echo $clientes['Direccion'] ?> </td>
                              
 
 

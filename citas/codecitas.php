@@ -7,7 +7,7 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
-$id_cliente = (isset($_POST['id_cliente'])) ? $_POST['id_cliente'] : "";
+$id_citas = (isset($_POST['id_citas'])) ? $_POST['id_citas'] : "";
 $Tipo_doc = (isset($_POST['Tipo_doc'])) ? $_POST['Tipo_doc'] : "";
 $Nombre = (isset($_POST['Nombre'])) ? $_POST['Nombre'] : "";
 $Apellido = (isset($_POST['Apellido'])) ? $_POST['Apellido'] : "";
@@ -21,7 +21,11 @@ $accion = (isset($_POST['accion'])) ? $_POST['accion'] : "";
 
 
 switch ($accion) {
-    case 'btnAgregar':      
+    case 'btnAgregar':
+
+
+
+       
 
 
                 /* la variable sentencia recolecta la informacion del formulario y 
@@ -29,43 +33,48 @@ switch ($accion) {
                 La variable conn nos brinda la conexion a la base de datos.
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
-                $insercionclientes = $conn->prepare(
-                    "INSERT INTO clientes (id_cliente,Tipo_doc, Nombre, Apellido, Telefono, Direccion) 
-                VALUES ('$id_cliente','$Tipo_doc','$Nombre','$Apellido','$Telefono','$Direccion')"
+                $insercioncitas = $conn->prepare(
+                    "INSERT INTO citas(id_citas,Tipo_doc, Nombre, Apellido, Telefono, Direccion) 
+                VALUES ('$id_citas','$Tipo_doc','$Nombre','$Apellido','$Telefono','$Direccion')"
                 );
 
-                $insercionclientes->execute();
-                $conn->close();             
-                            
 
-                header('location: index.php');        
+
+                $insercioncitas->execute();
+                $conn->close();
+               
+             
+
+                
+
+                header('location: index.php');
+           
+
+
 
 
         break;
 
     case 'btnModificar':
 
-        $editarclientes = $conn->prepare(" UPDATE clientes 
+        $editarcitas = $conn->prepare(" UPDATE citas
         SET Tipo_doc = '$Tipo_doc', Nombre= '$Nombre', Apellido = '$Apellido', 
         Telefono= '$Telefono', Direccion = '$Direccion'
-        WHERE id_cliente= '$id_cliente' ");
-
-        $editarclientes->execute();
-        $conn->close();
-
-        header('location: index.php');
-
-        break;
+        WHERE id_citas= '$id_citas' ");
 
      
 
-    case 'btnEliminar':
 
-        $eliminarclientes = $conn->prepare(" DELETE FROM clientes
-        WHERE id_cliente = '$id_cliente' ");
+        
+        /* 
+        $consultaFoto = $conn->prepare(" SELECT foto FROM citas
+        WHERE id_citas = 'id_citas' "); */
+
+        $eliminarcitas = $conn->prepare(" DELETE FROM citas
+        WHERE id_citas = '$id_citas' ");
 
         // $consultaFoto->execute();
-        $eliminarclientes->execute();
+        $eliminarcitas->execute();
         $conn->close();
 
         header('location: index.php');
@@ -83,8 +92,8 @@ switch ($accion) {
 
 
 
-/* Consultamos todos los clientes  */
-$consultaclientes = $conn->prepare("SELECT * FROM clientes");
-$consultaclientes->execute();
-$listaclientes = $consultaclientes->get_result();
+/* Consultamos todos los citas */
+$consultacitas = $conn->prepare("SELECT * FROM citas");
+$consultacitas->execute();
+$listacitas = $consultacitas->get_result();
 $conn->close();

@@ -1,4 +1,4 @@
-<?php include 'codehistorial_clinico.php'; ?>
+<?php include 'codecitas.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -19,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Historial Clinico</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos De Citas</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -29,19 +29,23 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-12">
-                                    <label for="id_historial_clinico">Numero de Identificacion</label> 
-                                    <input type="text" require name="id_historial_clinico" id="id_historial_clinico" placeholder="" value="<?php echo $id_historial_clinico ?>">
+                                    <label for="id_citas">Numero de Identificacion</label> 
+                                    <input type="text" require name="id_citas " id="id_citas" placeholder="" value="<?php echo $id_citas?>">
                                     <br>
                                 </div>  
 
                                 <div class="form-group col-md-12">
-                                    <label for="id_cliente">Tipo Documento</label>
-                                    <input type="text" class="form-control" require name="id_cliente" id="id_cliente" placeholder="" value="<?php echo $id_cliente ?>">
+                                    <label for="Tipo_doc">Tipo Documento</label>
+                                    <input type="text" class="form-control" require name="Tipo_doc" id="Tipo_doc" placeholder="" value="<?php echo $Tipo_doc ?>">
                                     <br>
                                 </div>                               
 
 
-                               
+                                <div class="form-group col-md-12">
+                                    <label for="Telefono">numero documento </label>
+                                    <input type="text" class="form-control" require name="Num_doc" id="Num_doc" placeholder="" value="<?php echo $Num_doc ?>">
+
+                                </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="Nombre">Nombre </label>
@@ -57,11 +61,16 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Diagnostico">Diagnostico </label>
-                                    <input type="text" class="form-control" require name="Diagnostico" id="Diagnostico" placeholder="" value="<?php echo $Diagnostico ?>">
+                                    <label for="Telefono">Telefono </label>
+                                    <input type="text" class="form-control" require name="Telefono" id="Telefono" placeholder="" value="<?php echo $Telefono ?>">
 
                                 </div>
 
+                                <div class="form-group col-md-12">
+                                    <label for="Direccion">Direccion </label>
+                                    <input type="text" class="form-control" require name="Direccion" id="Direccion" placeholder="" value="<?php echo $Direccion ?>">
+
+                               </div>
 
                             
                         </div>
@@ -82,7 +91,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar historial_clinico
+                Agregar citas
             </button>
 
 
@@ -116,10 +125,10 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listahistorial_clinico tiene algun contenido */
-                    if ($listahistorial_clinico->num_rows > 0) {
+                    /* Prefunto que si la variable listacitas tiene algun contenido */
+                    if ($listacitas->num_rows > 0) {
 
-                        foreach ($listahistorial_clinico as $historial_clinico) {
+                        foreach ($listacitas as $citas) {
 
                     ?>
 
@@ -127,24 +136,24 @@
 
                               
 
-                                <td> <?php echo $historial_clinico['id_historial_clinico']        ?> </td>
-                                <td> <?php echo $historial_clinico['id_cliente']    ?> </td>                               
-                                <td> <?php echo $historial_clinico['Nombre'] ?> </td>
-                                <td> <?php echo $historial_clinico['Apellido']    ?> </td>
-                                <td> <?php echo $historial_clinico['Telefono'] ?> </td>
-                                <td> <?php echo $historial_clinico['Direccion'] ?> </td>
+                                <td> <?php echo $citas['id_citas']        ?> </td>
+                                <td> <?php echo $citas['Tipo_doc']    ?> </td>                               
+                                <td> <?php echo $citas['Nombre'] ?> </td>
+                                <td> <?php echo $citas['Apellido']    ?> </td>
+                                <td> <?php echo $citas['Telefono'] ?> </td>
+                                <td> <?php echo $citas['Direccion'] ?> </td>
                              
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="id_historial_clinico" value="<?php echo $historial_clinico['id_historial_clinico'];  ?>">
-                                    <input type="hidden" name="id_cliente" value="<?php echo $historial_clinico['id_cliente '];  ?>">
-                                    <input type="hidden" name="Nombre" value="<?php echo $historial_clinico['Nombre'];  ?>">
-                                    <input type="hidden" name="Apellido" value="<?php echo $historial_clinico['Apellido'];  ?>">
-                                    <input type="hidden" name="Telefono" value="<?php echo $historial_clinico['Telefono'];  ?>">
-                                    <input type="hidden" name="Direccion" value="<?php echo $historial_clinico['Direccion'];  ?>">
+                                    <input type="hidden" name="id_citas" value="<?php echo $citas['id_citas'];  ?>">
+                                    <input type="hidden" name="Tipo_doc" value="<?php echo $citas['Tipo_doc'];  ?>">
+                                    <input type="hidden" name="Nombre" value="<?php echo $citas['Nombre'];  ?>">
+                                    <input type="hidden" name="Apellido" value="<?php echo $citas['Apellido'];  ?>">
+                                    <input type="hidden" name="Telefono" value="<?php echo $citas['Telefono'];  ?>">
+                                    <input type="hidden" name="Direccion" value="<?php echo $citas['Direccion'];  ?>">
                                
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
