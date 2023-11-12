@@ -1732,8 +1732,8 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #5a5c69;
-  border-color: #6c6e7e;
+  background-color: #ffb6d5;;
+  border-color: #ffb6d5;;
 }
 
 .table .thead-light th {
@@ -9771,11 +9771,11 @@ a.text-dark:hover, a.text-dark:focus {
   .table-dark td,
   .table-dark thead th,
   .table-dark tbody + tbody {
-    border-color: #e3e6f0;
+    border-color: #ffb6d5;
   }
   .table .thead-dark th {
     color: inherit;
-    border-color: #e3e6f0;
+    border-color: #ffb6d5;
   }
 }
 

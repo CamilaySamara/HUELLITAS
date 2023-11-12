@@ -1,4 +1,4 @@
-<?php include 'codeClientes.php'; ?>
+<?php include 'codeclientes.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -7,9 +7,7 @@
 
 
 
-        <!-- enctype="multipart/form-data" se utiliza para tratar la fotografia -->
-        <form action="" method="post" enctype="multipart/form-data">
-
+       
 
 
             <!-- Modal -->
@@ -29,8 +27,8 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-12">
-                                    <label for="id_cliente">Numero de Identificacion</label> 
-                                    <input type="text" require name="id_cliente " id="id_cliente" placeholder="" value="<?php echo $id_cliente ?>">
+                                    <label for="id_clientes"> id_clientes</label> 
+                                    <input type="text" require name="id_clientes " id="id_cliente" placeholder="" value="<?php echo $id_cliente ?>">
                                     <br>
                                 </div>  
 
@@ -105,7 +103,7 @@
 
                     <tr>
                     
-                        <th scope="col">Identificacion</th>
+                        <th scope="col">Tipo de documento</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Telefono</th>
@@ -130,7 +128,7 @@
 
                               
 
-                                <td> <?php echo $clientes['id_cliente']        ?> </td>
+                               
                                 <td> <?php echo $clientes['Tipo_doc']    ?> </td>                               
                                 <td> <?php echo $clientes['Nombre'] ?> </td>
                                 <td> <?php echo $clientes['Apellido']    ?> </td>
@@ -142,7 +140,7 @@
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="id_cliente" value="<?php echo $clientes['id_cliente'];  ?>">
+                                   
                                     <input type="hidden" name="Tipo_doc" value="<?php echo $clientes['Tipo_doc'];  ?>">
                                     <input type="hidden" name="Nombre" value="<?php echo $clientes['Nombre'];  ?>">
                                     <input type="hidden" name="Apellido" value="<?php echo $clientes['Apellido'];  ?>">
