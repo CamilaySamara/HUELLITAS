@@ -51,7 +51,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="../paginas/index.php">
-                <i class="fas fa-star" style="color: #f54792;"></i>
+                    <i class="fas fa-star" style="color: #f54792;"></i>
                     <span>Inicio</span></a>
             </li>
 
@@ -70,7 +70,7 @@
             <!-- Menu de Clientes -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../clientes/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-user-friends" style="color: #f54792;"></i>
+                    <i class="fas fa-user-friends" style="color: #f54792;"></i>
                     <span>clientes</span>
                 </a>
 
@@ -82,13 +82,13 @@
 
             <!-- Citas -->
             <div class="sidebar-heading">
-            Citas
+                Citas
             </div>
 
             <!-- Menu de Citas -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../citas/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>citas</span>
                 </a>
 
@@ -97,15 +97,15 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-             <!-- Macotas -->
-             <div class="sidebar-heading">
-             Macotas
+            <!-- Macotas -->
+            <div class="sidebar-heading">
+                Macotas
             </div>
 
             <!-- Menu de Macotas -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../mascotas/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>macotas</span>
                 </a>
 
@@ -114,16 +114,16 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-            
-             <!--razas -->
-             <div class="sidebar-heading">
-             razas
+
+            <!--razas -->
+            <div class="sidebar-heading">
+                razas
             </div>
 
             <!-- Menu de razas -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../razas/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>razas</span>
 
                 </a>
@@ -133,16 +133,16 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-                    
-             <!--historial clinico -->
-             <div class="sidebar-heading">
-             historial clinico
+
+            <!--historial clinico -->
+            <div class="sidebar-heading">
+                historial clinico
             </div>
 
             <!-- Menu de historial clinico -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../historial clinico/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>historial clinico</span>
 
                 </a>
@@ -152,15 +152,15 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-             <!--tipo de mascota -->
-             <div class="sidebar-heading">
-             tipo de mascota
+            <!--tipo de mascota -->
+            <div class="sidebar-heading">
+                tipo de mascota
             </div>
 
             <!-- Menu de tipo de mascota -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../tipo de mascota/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>tipo de mascota</span>
 
                 </a>
@@ -170,15 +170,15 @@
             <!-- tipo de alimentacion -->
             <hr class="sidebar-divider my-0">
 
-             <!--tipo de alimentacion -->
-             <div class="sidebar-heading">
-             tipo de alimentacion
+            <!--tipo de alimentacion -->
+            <div class="sidebar-heading">
+                tipo de alimentacion
             </div>
 
             <!-- Menu de tipo de alimentacion -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../tipo de alimentacion/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>tipo de alimentacion</span>
 
                 </a>
@@ -188,15 +188,15 @@
             <!-- vacunas -->
             <hr class="sidebar-divider my-0">
 
-             <!--vacunas -->
-             <div class="sidebar-heading">
-             vacunas
+            <!--vacunas -->
+            <div class="sidebar-heading">
+                vacunas
             </div>
 
             <!-- Menu de vacunas-->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../vacunas/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>vacunas</span>
 
                 </a>
@@ -206,15 +206,15 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-             <!--tipo de vacunas -->
-             <div class="sidebar-heading">
-             tipo de vacunas
+            <!--tipo de vacunas -->
+            <div class="sidebar-heading">
+                tipo de vacunas
             </div>
 
             <!-- Menu de tipo de vacunas -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../tipo de vacunas/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>tipo de vacunas</span>
 
                 </a>
@@ -228,7 +228,7 @@
             <!-- Menu de veterinario -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../veterinario/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>veterinario</span>
 
                 </a>
@@ -238,12 +238,12 @@
             <!-- Linea de separacion  -->
             <hr class="sidebar-divider my-0">
 
-           
+
 
             <!-- Menu tratamiento -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="../tratamiento/index.php" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-regular fa-handshake fa-beat"></i>
+                    <i class="fas fa-regular fa-handshake fa-beat" style="color: #f54792;"></i>
                     <span>tratamiento</span>
 
                 </a>
@@ -255,16 +255,10 @@
 
 
 
-
-
-
-
- 
-
         </ul>
         <!-- Final del Menu Izquierdo -->
 
-        
+
 
 
 
