@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-11-2023 a las 04:00:45
+-- Tiempo de generación: 15-11-2023 a las 13:31:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -35,6 +35,13 @@ CREATE TABLE `citas` (
   `id_veterinario` int(30) NOT NULL,
   `diagnostico` text COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`Fecha_cita`, `id_citas`, `id_cliente`, `id_mascotas`, `id_veterinario`, `diagnostico`) VALUES
+('2023-11-15 03:04:53', 2, 1222, 9, 888, 'Control');
 
 -- --------------------------------------------------------
 
@@ -77,7 +84,7 @@ CREATE TABLE `mascotas` (
   `id_mascotas` int(11) NOT NULL,
   `id_clientes` int(11) NOT NULL,
   `id_raza` int(11) NOT NULL,
-  `Nombre` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `Nombre_mascota` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `Sexo` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `Peso` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
   `Fecha_nacimiento` date NOT NULL,
@@ -89,7 +96,7 @@ CREATE TABLE `mascotas` (
 -- Volcado de datos para la tabla `mascotas`
 --
 
-INSERT INTO `mascotas` (`id_mascotas`, `id_clientes`, `id_raza`, `Nombre`, `Sexo`, `Peso`, `Fecha_nacimiento`, `id_tipo_alimentacion`, `foto`) VALUES
+INSERT INTO `mascotas` (`id_mascotas`, `id_clientes`, `id_raza`, `Nombre_mascota`, `Sexo`, `Peso`, `Fecha_nacimiento`, `id_tipo_alimentacion`, `foto`) VALUES
 (9, 1222, 3, 'Tomas ', 'M', '10', '2023-11-22', 3, 'LogoSena.png');
 
 -- --------------------------------------------------------
@@ -179,6 +186,13 @@ CREATE TABLE `vacunas` (
   `id_mascota` int(11) NOT NULL,
   `id_tipo_vacuna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `vacunas`
+--
+
+INSERT INTO `vacunas` (`id_vacunas`, `id_mascota`, `id_tipo_vacuna`) VALUES
+(2, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +298,7 @@ ALTER TABLE `veterinario`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_citas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `mascotas`
@@ -320,7 +334,7 @@ ALTER TABLE `tipo_vacuna`
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
 ALTER TABLE `vacunas`
-  MODIFY `id_vacunas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_vacunas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
