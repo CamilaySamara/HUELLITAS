@@ -29,40 +29,47 @@
 
 
                                 <div class="form-group col-md-12">
+
                                     <label for="Tipo_doc">Tipo Documento</label>
 
-                                    <input type="text" class="form-control" name="Tipo_doc" id="Tipo_doc" value="<?php echo $Tipo_doc ?>">
+                                    <select name="Tipo_doc" id="Tipo_doc" class="form-control">
+                                        <option value="C.C.">Cedula de Ciudadania</option>
+                                        <option value="T.I.">Tarjeta de Identidad</option>
+                                        <option value="C.E.">Cedula de Extranjeria</option>
+
+                                    </select>
+
                                     <br>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="id_cliente"> id_clientes</label>
+                                    <label for="id_cliente"> Numero de Documento</label>
                                     <input type="text" class="form-control" name="id_cliente" id="id_cliente" value="<?php echo $id_cliente ?>">
                                     <br>
                                 </div>
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Nombre">Nombre </label>
+                                    <label for="Nombre">Nombre Cliente </label>
                                     <input type="text" class="form-control" name="Nombre" id="Nombre" value="<?php echo $Nombre ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Apellido">Apellido</label>
+                                    <label for="Apellido">Apellido Cliente</label>
                                     <input type="text" class="form-control" name="Apellido" id="Apellido" value="<?php echo $Apellido ?>">
                                     <br>
                                 </div>
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Telefono">Telefono </label>
+                                    <label for="Telefono">Telefono Cliente</label>
                                     <input type="text" class="form-control" name="Telefono" id="Telefono" value="<?php echo $Telefono ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Direccion">Direccion </label>
+                                    <label for="Direccion">Direccion Cliente</label>
                                     <input type="text" class="form-control" name="Direccion" id="Direccion" value="<?php echo $Direccion ?>">
 
                                 </div>

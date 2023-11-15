@@ -7,11 +7,14 @@ include("../Conexion/conexion.php");
 
 
 //Recibimos las variables enviadas
-$txtId = (isset($_POST['txtId'])) ? $_POST['txtId'] : "";
-$txtNombre = (isset($_POST['txtNombre'])) ? $_POST['txtNombre'] : "";
-$txtApellidoP = (isset($_POST['txtApellidoP'])) ? $_POST['txtApellidoP'] : "";
-$txtApellidoM = (isset($_POST['txtApellidoM'])) ? $_POST['txtApellidoM'] : "";
-$txtCorreo = (isset($_POST['txtCorreo'])) ? $_POST['txtCorreo'] : "";
+$id_mascotas = (isset($_POST['id_mascotas'])) ? $_POST['id_mascotas'] : "";
+$id_clientes = (isset($_POST['id_clientes'])) ? $_POST['id_clientes'] : "";
+$id_raza = (isset($_POST['id_raza'])) ? $_POST['id_raza'] : "";
+$Nombre = (isset($_POST['Nombre'])) ? $_POST['Nombre'] : "";
+$Sexo = (isset($_POST['Sexo'])) ? $_POST['Sexo'] : "";
+$Peso = (isset($_POST['Peso'])) ? $_POST['Peso'] : "";
+$Fecha_nacimiento = (isset($_POST['Fecha_nacimiento'])) ? $_POST['Fecha_nacimiento'] : "";
+$id_tipo_alimentacion = (isset($_POST['id_tipo_alimentacion'])) ? $_POST['id_tipo_alimentacion'] : "";
 
 $foto = (isset($_FILES['foto']["name"])) ? $_FILES['foto']["name"] : "";
 
@@ -38,7 +41,7 @@ switch ($accion) {
 
             if ($tmpFoto != "") {
                 /* Movemos el archivo a la carpeta imagenes  */
-                move_uploaded_file($tmpFoto, "../Imagenes/Empleados/" . $nombreFoto);
+                move_uploaded_file($tmpFoto, "../Imagenes/Mascotas/" . $nombreFoto);
 
 
                 /* la variable sentencia recolecta la informacion del formulario y 
@@ -46,15 +49,16 @@ switch ($accion) {
                 La variable conn nos brinda la conexion a la base de datos.
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
-                $insercionEmpleados = $conn->prepare(
-                    "INSERT INTO empleados(nombre, apellidoP, 
-                apellidoM, correo, foto) 
-                VALUES ('$txtNombre','$txtApellidoP','$txtApellidoM','$txtCorreo','$foto')"
+                $insercionMascotas = $conn->prepare(
+                    "INSERT INTO mascotas(id_clientes, id_raza, Nombre, Sexo, Peso, Fecha_nacimiento,
+                    id_tipo_alimentacion, foto) 
+                VALUES ('$id_clientes','$id_raza','$Nombre','$Sexo','$Peso','$Fecha_nacimiento',
+                '$id_tipo_alimentacion','$foto')"
                 );
 
 
 
-                $insercionEmpleados->execute();
+                $insercionMascotas->execute();
                 $conn->close();
                
                echo" <script>
@@ -78,13 +82,14 @@ switch ($accion) {
 
     case 'btnModificar':
 
-        $editarEmpleados = $conn->prepare(" UPDATE empleados SET nombre = '$txtNombre' , 
-        apellidoP = '$txtApellidoP', apellidoM = '$txtApellidoM', correo = '$txtCorreo'
-        WHERE id = '$txtId' ");
+        $editarMascotas = $conn->prepare(" UPDATE mascotas SET id_clientes = '$id_clientes' , 
+        id_raza = '$id_raza', Nombre = '$Nombre', Sexo = '$Sexo', Peso = '$Peso', Fecha_nacimiento = '$Fecha_nacimiento',
+        id_tipo_alimentacion = '$id_tipo_alimentacion'
+        WHERE id_mascotas = '$id_mascotas' ");
 
         /* Aca solo esta actualizando la fotografia */
-        $editarEmpleadosFoto = $conn->prepare(" UPDATE empleados SET  foto = '$foto'
-        WHERE id = '$txtId' ");
+        $editarMascotasFoto = $conn->prepare(" UPDATE mascotas SET  foto = '$foto'
+        WHERE id_mascotas = '$id_mascotas' ");
 
 
         $fecha = new DateTime();
@@ -100,15 +105,15 @@ switch ($accion) {
 
         if ($tmpFoto != "") {
             /* Movemos el archivo a la carpeta imagenes  */
-            move_uploaded_file($tmpFoto, "../Imagenes/Empleados/" . $nombreFoto);
+            move_uploaded_file($tmpFoto, "../Imagenes/Mascotas/" . $nombreFoto);
 
             header('location: index.php');
         } else {
             echo "Problemas con la Foto";
         }
 
-        $editarEmpleados->execute();
-        $editarEmpleadosFoto->execute();
+        $editarMascotas->execute();
+        $editarMascotasFoto->execute();
         $conn->close();
 
         header('location: index.php');
@@ -116,15 +121,12 @@ switch ($accion) {
         break;
 
     case 'btnEliminar':
-        /* 
-        $consultaFoto = $conn->prepare(" SELECT foto FROM empleados
-        WHERE id = '$txtId' "); */
-
-        $eliminarEmpleado = $conn->prepare(" DELETE FROM empleados
-        WHERE id = '$txtId' ");
+        
+        $eliminarMascota = $conn->prepare(" DELETE FROM mascotas
+        WHERE id_mascotas = '$id_mascotas' ");
 
         // $consultaFoto->execute();
-        $eliminarEmpleado->execute();
+        $eliminarMascota->execute();
         $conn->close();
 
         header('location: index.php');
@@ -142,8 +144,25 @@ switch ($accion) {
 
 
 
-/* Consultamos todos los empleados  */
-$consultaEmpleados = $conn->prepare("SELECT * FROM empleados");
-$consultaEmpleados->execute();
-$listaEmpleados = $consultaEmpleados->get_result();
+/* Consultamos todos las mascotas  */
+$consultaMascotas = $conn->prepare("SELECT * FROM mascotas");
+$consultaMascotas->execute();
+$listaMascotas = $consultaMascotas->get_result();
+
+/* Consultamos todos los clientes  */
+$consultaClientes = $conn->prepare("SELECT * FROM clientes");
+$consultaClientes->execute();
+$listaClientes = $consultaClientes->get_result();
+
+
+/* Consultamos todos las razas   */
+$consultaRazas = $conn->prepare("SELECT * FROM razas");
+$consultaRazas->execute();
+$listaRazas = $consultaRazas->get_result();
+
+
+/* Consultamos todos los tipos de alimentacion  */
+$consultaTipoAlimentacion = $conn->prepare("SELECT * FROM tipo_alimentacion");
+$consultaTipoAlimentacion->execute();
+$listaTipoAlimentacion = $consultaTipoAlimentacion->get_result();
 $conn->close();

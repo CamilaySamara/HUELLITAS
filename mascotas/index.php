@@ -1,10 +1,14 @@
-<?php include 'codemascotas.php'; ?>
+<?php include 'codeMascotas.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
 <div class="container">
     <div class="row">
 
+
+
+        <!-- enctype="multipart/form-data" se utiliza para tratar la fotografia -->
+        <form action="" method="post" enctype="multipart/form-data">
 
 
 
@@ -15,7 +19,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos de la mascota</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos De la Mascota</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -24,72 +28,127 @@
 
                             <div class="form-row">
 
-                                <!-- <label for="id_mascotas">Id</label> -->
-                                <input type="hidden" require name="id_mascotas" id="id_mascotas" placeholder="" value="<?php echo $id_mascotas ?>">
-                                <!-- <br> -->
 
+                                <input type="hidden" require name="id_mascotas" id="id_mascotas"  value="<?php echo $id_mascotas ?>">
+
+
+                                <!-- Selector de CLIENTES -->
                                 <div class="form-group col-md-12">
-                                    <label for="id_clientes">id_clientes</label>
-                                    <input type="text" class="form-control" require name="id_clientes" id="id_clientes" placeholder="" value="<?php echo $id_clientes ?>">
-                                    <br>
-                                </div>                               
+
+                                    <label for="id_clientes">Clientes</label>
 
 
-                                <div class="form-group col-md-12">
-                                    <label for="id_tipo_mascota">id_tipo_mascota </label>
-                                    <input type="text" class="form-control" require name="id_tipo_mascota" id="id_tipo_mascota" placeholder="" value="<?php echo $id_tipo_mascota ?>">
+                                    <select name="id_clientes" id="id_clientes" class="form-control">
+
+                                        <?php
+
+                                        if ($listaClientes->num_rows > 0) {
+                                            foreach ($listaClientes as $cliente) {
+                                                echo " <option value='' hidden > Seleccione el Empleado</option> ";
+                                                echo " <option value='{$cliente['id_cliente']}'> {$cliente['id_cliente']} {$cliente['Nombre']} {$cliente['Apellido']} </option> ";
+                                            }
+                                        } else {
+
+                                            echo "<h2> No tenemos resultados </h2>";
+                                        }
+                                        ?>
+                                    </select>
+
 
                                 </div>
 
+                                <!-- FIN SELECTOR CLIENTES -->
+
+
+                                <!-- Selector de RAZAS -->
                                 <div class="form-group col-md-12">
-                                    <label for="id_raza">id_raza </label>
-                                    <input type="text" class="form-control" require name="id_raza" id="id_raza" placeholder="" value="<?php echo $id_raza?>">
+
+                                    <label for="id_raza">Raza</label>
+
+
+                                    <select name="id_raza" id="id_raza" class="form-control">
+
+                                        <?php
+
+                                        if ($listaRazas->num_rows > 0) {
+                                            foreach ($listaRazas as $raza) {
+                                                echo " <option value='' hidden > Seleccione el Empleado</option> ";
+                                                echo " <option value='{$raza['id_razas']}'> {$raza['id_razas']} {$raza['Nom_razas']} {$raza['id_tipo_mascota']} </option> ";
+                                            }
+                                        } else {
+
+                                            echo "<h2> No tenemos resultados </h2>";
+                                        }
+                                        ?>
+                                    </select>
+
 
                                 </div>
 
+                                <!-- FIN SELECTOR RAZAS -->
+
+
                                 <div class="form-group col-md-12">
-                                    <label for="Nombre">Nombre</label>
+                                    <label for="Nombre">Nombre(Mascota)</label>
                                     <input type="text" class="form-control" require name="Nombre" id="Nombre" placeholder="" value="<?php echo $Nombre ?>">
                                     <br>
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <label for="Sexo">Sexo</label>
-                                    <input type="text" class="form-control" require name="Sexo" id="Sexo" placeholder="" value="<?php echo $Sexo ?>">
-                                    <br>
-                                </div>                               
-
 
                                 <div class="form-group col-md-12">
-                                    <label for="Peso">Peso </label>
-                                    <input type="text" class="form-control" require name="Peso" id="Peso" placeholder="" value="<?php echo $Peso ?>">
+                                    <label for="Sexo">Sexo (Mascota) </label>
+                                    <input type="text" class="form-control" require name="Sexo" id="Sexo" value="<?php echo $Sexo ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="Fecha_nacimiento">Fecha_nacimiento </label>
-                                    <input type="text" class="form-control" require name="Fecha_nacimiento" id="Fecha_nacimiento" placeholder="" value="<?php echo $Fecha_nacimiento?>">
+                                    <label for="Peso">Peso (Mascota) </label>
+                                    <input type="text" class="form-control" require name="Peso" id="Peso" value="<?php echo $Peso ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="id_tipo_alimentacion">id_tipo_alimentacion</label>
-                                    <input type="text" class="form-control" require name="id_tipo_alimentacion" id="id_tipo_alimentacion" placeholder="" value="<?php echo $id_tipo_alimentacion ?>">
+                                    <label for="Fecha_nacimiento">Fecha Nacimiento Mascota</label>
+                                    <input type="date" class="form-control" require name="Fecha_nacimiento" id="Fecha_nacimiento" value="<?php echo $Fecha_nacimiento ?>">
                                     <br>
                                 </div>
 
+
+
+                                <!-- Selector de TIPO ALIMENTO -->
                                 <div class="form-group col-md-12">
-                                    <label for="id_historial_clinico">id_historial_clinico </label>
-                                    <input type="text" class="form-control" require name="id_historial_clinico" id="id_historial_clinico" placeholder="" value="<?php echo $id_historial_clinico ?>">
+
+                                    <label for="id_tipo_alimentacion">Tipo de Alimentacion</label>
+
+
+                                    <select name="id_tipo_alimentacion" id="id_tipo_alimentacion" class="form-control">
+
+                                        <?php
+
+                                        if ($listaTipoAlimentacion->num_rows > 0) {
+                                            foreach ($listaTipoAlimentacion as $alimento) {
+                                                echo " <option value='' hidden > Seleccione el Empleado</option> ";
+                                                echo " <option value='{$alimento['id_tipo_alimentacion']}'> {$alimento['id_tipo_alimentacion']} {$alimento['Nom_tipo_alim']}  </option> ";
+                                            }
+                                        } else {
+
+                                            echo "<h2> No tenemos resultados </h2>";
+                                        }
+                                        ?>
+                                    </select>
+
 
                                 </div>
 
+                                <!-- FIN SELECTOR TIPO ALIMENTO -->
+
+
                                 <div class="form-group col-md-12">
-                                    <label for="id_tratamiento">id_tratamiento</label>
-                                    <input type="text" class="form-control" require name="id_tratamiento" id="id_tratamiento" placeholder="" value="<?php echo $id_tratamiento ?>">
+                                    <label for="foto">foto</label>
+                                    <!-- El atributo accept image .... solo acepta formatos de imagen -->
+                                    <input type="file" class="form-control" require accept="image/*" name="foto" id="foto" value="<?php echo $foto ?>">
                                     <br>
                                 </div>
-                                
 
 
 
@@ -112,7 +171,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar mascota
+                Agregar Mascota
             </button>
 
 
@@ -131,11 +190,16 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Sexo</th>
-                        <th scope="col">Peso</th>
-                        
+                        <th scope="col">Foto</th>
+                        <th scope="col">Id Mascota</th>
+                        <th scope="col">Cedula Cliente</th>
+                        <th scope="col">Raza</th>
+                        <th scope="col">Nombre Mascota</th>
+                        <th scope="col">Sexo Mascota</th>
+                        <th scope="col">Peso Mascota</th>
+                        <th scope="col">Fecha nacimiento (Mascota) </th>
+                        <th scope="col">Tipo de Alimentacion </th>
+
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -145,32 +209,45 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listamascotas tiene algun contenido */
-                    if ($listamascotas->num_rows > 0) {
+                    /* Prefunto que si la variable listaMascotas tiene algun contenido */
+                    if ($listaMascotas->num_rows > 0) {
 
-                        foreach ($listamascotas as $mascotas) {
+                        foreach ($listaMascotas as $mascota) {
 
                     ?>
 
                             <tr>
 
-                               
+                                <td>
+                                    <img class="img-thumbnail" width="100px" src="../Imagenes/Mascotas/<?php echo $mascota['foto']; ?>" />
 
-                                
-                                <td> <?php echo $mascotas['Nombre']    ?> </td>
-                                <td> <?php echo $mascotas['Sexo'] ?> </td>
-                                <td> <?php echo $mascotas['Peso'] ?> </td>
-                                
+                                </td>
+
+                                <td> <?php echo $mascota['id_mascotas']        ?> </td>
+                                <td> <?php echo $mascota['id_clientes']    ?> </td>
+                                <td> <?php echo $mascota['id_raza'] ?> </td>
+                                <td> <?php echo $mascota['Nombre'] ?> </td>
+                                <td> <?php echo $mascota['Sexo']    ?> </td>
+                                <td> <?php echo $mascota['Peso']    ?> </td>
+                                <td> <?php echo $mascota['Fecha_nacimiento']    ?> </td>
+                                <td> <?php echo $mascota['id_tipo_alimentacion']    ?> </td>
 
 
 
                                 <form action="" method="post">
 
-                                   
-                                    <input type="hidden" name="Nombre" value="<?php echo $mascotas['Nombre'];  ?>">
-                                    <input type="hidden" name="Sexo" value="<?php echo $mascotas['Sexo'];  ?>">
-                                    <input type="hidden" name="Peso" value="<?php echo $mascotas['Peso'];  ?>">
-                                   
+                                    <input type="hidden" name="id_mascotas" value="<?php echo $mascota['id_mascotas'];  ?>">
+                                    <input type="hidden" name="id_clientes" value="<?php echo $mascota['id_clientes'];  ?>">
+                                    <input type="hidden" name="id_raza" value="<?php echo $mascota['id_raza'];  ?>">
+                                    <input type="hidden" name="Nombre" value="<?php echo $mascota['Nombre'];  ?>">
+                                    <input type="hidden" name="Sexo" value="<?php echo $mascota['Sexo'];  ?>">
+                                    <input type="hidden" name="Peso" value="<?php echo $mascota['Peso'];  ?>">
+                                    <input type="hidden" name="Fecha_nacimiento" value="<?php echo $mascota['Fecha_nacimiento'];  ?>">
+                                    <input type="hidden" name="id_tipo_alimentacion" value="<?php echo $mascota['id_tipo_alimentacion'];  ?>">
+
+
+
+                                    <input type="hidden" name="foto" value="<?php echo $mascota['foto'];  ?>">
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>

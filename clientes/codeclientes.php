@@ -29,7 +29,7 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
         $insercionclientes = $conn->prepare(
-            "INSERT INTO clientes(Tipo_doc, id_cliente, Nombre, Apellido, Telefono, Direccion) 
+            "INSERT INTO clientes (Tipo_doc, id_cliente, Nombre, Apellido, Telefono, Direccion) 
                 VALUES ('$Tipo_doc','$id_cliente','$Nombre','$Apellido','$Telefono','$Direccion')"
         );
 

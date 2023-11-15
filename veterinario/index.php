@@ -1,4 +1,4 @@
-<?php include 'codeveterinario.php'; ?>
+<?php include 'codeVeterinario.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -7,9 +7,7 @@
 
 
 
-        <!-- enctype="multipart/form-data" se utiliza para tratar la fotografia -->
-        <form action="" method="post" enctype="multipart/form-data">
-
+        <form action="" method="post">
 
 
             <!-- Modal -->
@@ -19,7 +17,7 @@
 
                         <!-- cabecera del modal -->
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del cliente</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Datos Del Veterinario</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -28,55 +26,54 @@
 
                             <div class="form-row">
 
+
                                 <div class="form-group col-md-12">
-                                    <label for="id_veterinario">id_veterinario</label> 
-                                    <input type="text" require name="id_veterinario " id="id_cliente" placeholder="" value="<?php echo $id_veterinario ?>">
+                                    <label for="id_veterinario"> Numero de Documento</label>
+                                    <input type="text" class="form-control" name="id_veterinario" id="id_veterinario" value="<?php echo $id_veterinario ?>">
                                     <br>
-                                </div>  
-
-                                <div class="form-group col-md-12">
-                                    <label for="Nom_veterinario">Nombre(s)</label>
-                                    <input type="text" class="form-control" require name="Nom_veterinario" id="Nom_veterinario" placeholder="" value="<?php echo $Nom_clientes ?>">
-                                    <br>
-                                </div>                               
+                                </div>
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Telefono">Telefono </label>
-                                    <input type="text" class="form-control" require name="Telefono" id="Telefono" placeholder="" value="<?php echo $Telefono ?>">
+                                    <label for="Nom_veterinario">Nombre Veterinario </label>
+                                    <input type="text" class="form-control" name="Nom_veterinario" id="Nom_veterinario" value="<?php echo $Nom_veterinario ?>">
+
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="Telefono">Telefono Veterinario</label>
+                                    <input type="text" class="form-control" name="Telefono" id="Telefono" value="<?php echo $Telefono ?>">
 
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="txtApellidoM">Segundo Apellido </label>
-                                    <input type="text" class="form-control" require name="txtApellidoM" id="txtApellidoM" placeholder="" value="<?php echo $txtApellidoM ?>">
+                                    <label for="Num_Profesional">Tarjeta Profesional</label>
+                                    <input type="text" class="form-control" name="Num_Profesional" id="Num_Profesional" value="<?php echo $Num_Profesional ?>">
 
                                 </div>
-
-                              
-
 
 
                             </div>
+
+                            <!-- Pie/Footer del modal -->
+                            <div class="modal-footer">
+
+                                <button value="btnAgregar" class="btn btn-success" type="submit" name="accion">Agregar</button>
+                                <button value="btnModificar" class="btn btn-warning" type="submit" name="accion">Modificar</button>
+                                <button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button>
+                                <button value="btnCancelar" class="btn btn-primary" type="submit" name="accion">Cancelar</button>
+
+                            </div>
+
                         </div>
-
-                        <!-- Pie/Footer del modal -->
-                        <div class="modal-footer">
-
-                            <button value="btnAgregar" class="btn btn-success" type="submit" name="accion">Agregar</button>
-                            <button value="btnModificar" class="btn btn-warning" type="submit" name="accion">Modificar</button>
-                            <button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button>
-                            <button value="btnCancelar" class="btn btn-primary" type="submit" name="accion">Cancelar</button>
-
-                        </div>
-
                     </div>
                 </div>
             </div>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Agregar cliente
+                Agregar Veterinario
             </button>
 
 
@@ -95,12 +92,13 @@
                 <thead class="thead-dark">
 
                     <tr>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Identificacion</th>
+
+
+                        <th scope="col">Numero Documento</th>
                         <th scope="col">Nombres</th>
-                        <th scope="col">Primer Apellido</th>
-                        <th scope="col">Segundo Apellido</th>
-                        <th scope="col">Correo</th>
+
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Tarjeta Profesional</th>
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -110,36 +108,37 @@
                 <tbody>
 
                     <?php
-                    /* Prefunto que si la variable listaveterinario tiene algun contenido */
-                    if ($listaveterinario->num_rows > 0) {
+                    /* Prefunto que si la variable listaVeterinario tiene algun contenido */
+                    if ($listaVeterinario->num_rows > 0) {
 
-                        foreach ($listaveterinario as $veterinario) {
+                        foreach ($listaVeterinario as $veterinario) {
 
                     ?>
 
                             <tr>
 
-                                <td>
-                                    <img class="img-thumbnail" width="100px" src="../Imagenes/veterinario/<?php echo $veterinario['foto']; ?>" />
 
-                                </td>
 
-                                <td> <?php echo $veterinario['id']        ?> </td>
-                                <td> <?php echo $veterinario['nombre']    ?> </td>
-                                <td> <?php echo $veterinario['apellidoP'] ?> </td>
-                                <td> <?php echo $veterinario['apellidoM'] ?> </td>
-                                <td> <?php echo $veterinario['correo']    ?> </td>
+
+
+                                <td> <?php echo $veterinario['id_veterinario']    ?> </td>
+                                <td> <?php echo $veterinario['Nom_veterinario'] ?> </td>
+                                <td> <?php echo $veterinario['Telefono'] ?> </td>
+                                <td> <?php echo $veterinario['Num_Profesional'] ?> </td>
+
 
 
 
                                 <form action="" method="post">
 
-                                    <input type="hidden" name="txtId" value="<?php echo $veterinario['id'];  ?>">
-                                    <input type="hidden" name="txtNombre" value="<?php echo $veterinario['nombre'];  ?>">
-                                    <input type="hidden" name="txtApellidoP" value="<?php echo $veterinario['apellidoP'];  ?>">
-                                    <input type="hidden" name="txtApellidoM" value="<?php echo $veterinario<['apellidoM'];  ?>">
-                                    <input type="hidden" name="txtCorreo" value="<?php echo $veterinario['correo'];  ?>">
-                                    <input type="hidden" name="foto" value="<?php echo $veterinario['foto'];  ?>">
+
+
+                                    <input type="hidden" name="id_veterinario" value="<?php echo $veterinario['id_veterinario'];  ?>">
+                                    <input type="hidden" name="Nom_veterinario" value="<?php echo $veterinario['Nom_veterinario'];  ?>">
+
+                                    <input type="hidden" name="Telefono" value="<?php echo $veterinario['Telefono'];  ?>">
+                                    <input type="hidden" name="Num_Profesional" value="<?php echo $veterinario['Num_Profesional'];  ?>">
+
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
                                     <td><button value="btnEliminar" class="btn btn-danger" type="submit" name="accion">Eliminar</button></td>
