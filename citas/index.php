@@ -200,9 +200,9 @@
 
                                 <td> <?php echo $cita['Fecha_cita']    ?> </td>
                                 <td> <?php echo $cita['id_citas'] ?> </td>
-                                <td> <?php echo $cita['id_cliente'] ?> </td>
-                                <td> <?php echo $cita['id_mascotas'] ?> </td>
-                                <td> <?php echo $cita['id_veterinario'] ?> </td>
+                                <td> <?php echo $cita['id_cliente'] ,' ', $cita['Nombre'], ' ', $cita['Apellido'] ?> </td>
+                                <td> <?php echo $cita['id_mascotas'], ' ', $cita['Nombre_mascota']?> </td>
+                                <td> <?php echo $cita['id_veterinario'], ' ', $cita['Nom_veterinario'] ?> </td>
                                 <td> <?php echo $cita['diagnostico'] ?> </td>
 
 

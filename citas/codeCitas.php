@@ -99,7 +99,13 @@ $consultaVeterinario->execute();
 $listaVeterinario = $consultaVeterinario->get_result();
 
 /* Consultamos todas las citas */
-$consultaCitas = $conn->prepare("SELECT * FROM citas");
+$consultaCitas = $conn->prepare("SELECT * FROM citas
+INNER JOIN clientes
+ON citas.id_cliente = clientes.id_cliente
+INNER JOIN mascotas
+ON citas.id_mascotas = mascotas.id_mascotas
+INNER JOIN veterinario
+ON citas.id_veterinario = veterinario.id_veterinario");
 $consultaCitas->execute();
 $listaCitas = $consultaCitas->get_result();
 

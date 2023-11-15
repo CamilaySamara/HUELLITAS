@@ -10,7 +10,7 @@ include("../Conexion/conexion.php");
 $id_mascotas = (isset($_POST['id_mascotas'])) ? $_POST['id_mascotas'] : "";
 $id_clientes = (isset($_POST['id_clientes'])) ? $_POST['id_clientes'] : "";
 $id_raza = (isset($_POST['id_raza'])) ? $_POST['id_raza'] : "";
-$Nombre = (isset($_POST['Nombre'])) ? $_POST['Nombre'] : "";
+$Nombre_mascota = (isset($_POST['Nombre_mascota'])) ? $_POST['Nombre_mascota'] : "";
 $Sexo = (isset($_POST['Sexo'])) ? $_POST['Sexo'] : "";
 $Peso = (isset($_POST['Peso'])) ? $_POST['Peso'] : "";
 $Fecha_nacimiento = (isset($_POST['Fecha_nacimiento'])) ? $_POST['Fecha_nacimiento'] : "";
@@ -50,9 +50,9 @@ switch ($accion) {
                 ->prepare nos prepara la sentencia SQL para que inyecte los valores a la BD.
                 */
                 $insercionMascotas = $conn->prepare(
-                    "INSERT INTO mascotas(id_clientes, id_raza, Nombre, Sexo, Peso, Fecha_nacimiento,
+                    "INSERT INTO mascotas(id_clientes, id_raza, Nombre_mascota, Sexo, Peso, Fecha_nacimiento,
                     id_tipo_alimentacion, foto) 
-                VALUES ('$id_clientes','$id_raza','$Nombre','$Sexo','$Peso','$Fecha_nacimiento',
+                VALUES ('$id_clientes','$id_raza','$Nombre_mascota','$Sexo','$Peso','$Fecha_nacimiento',
                 '$id_tipo_alimentacion','$foto')"
                 );
 
@@ -83,7 +83,7 @@ switch ($accion) {
     case 'btnModificar':
 
         $editarMascotas = $conn->prepare(" UPDATE mascotas SET id_clientes = '$id_clientes' , 
-        id_raza = '$id_raza', Nombre = '$Nombre', Sexo = '$Sexo', Peso = '$Peso', Fecha_nacimiento = '$Fecha_nacimiento',
+        id_raza = '$id_raza', Nombre_mascota = '$Nombre_mascota', Sexo = '$Sexo', Peso = '$Peso', Fecha_nacimiento = '$Fecha_nacimiento',
         id_tipo_alimentacion = '$id_tipo_alimentacion'
         WHERE id_mascotas = '$id_mascotas' ");
 
@@ -145,7 +145,13 @@ switch ($accion) {
 
 
 /* Consultamos todos las mascotas  */
-$consultaMascotas = $conn->prepare("SELECT * FROM mascotas");
+$consultaMascotas = $conn->prepare("SELECT * FROM mascotas
+INNER JOIN clientes
+ON mascotas.id_clientes = clientes.id_cliente
+INNER JOIN razas
+ON mascotas.id_raza = razas.id_razas
+INNER JOIN tipo_alimentacion
+ON mascotas.id_tipo_alimentacion = tipo_alimentacion.id_tipo_alimentacion");
 $consultaMascotas->execute();
 $listaMascotas = $consultaMascotas->get_result();
 

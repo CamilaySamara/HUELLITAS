@@ -29,7 +29,7 @@
                             <div class="form-row">
 
 
-                                <input type="hidden" require name="id_mascotas" id="id_mascotas"  value="<?php echo $id_mascotas ?>">
+                                <input type="hidden" require name="id_mascotas" id="id_mascotas" value="<?php echo $id_mascotas ?>">
 
 
                                 <!-- Selector de CLIENTES -->
@@ -89,8 +89,8 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="Nombre">Nombre(Mascota)</label>
-                                    <input type="text" class="form-control" require name="Nombre" id="Nombre" placeholder="" value="<?php echo $Nombre ?>">
+                                    <label for="Nombre_mascota">Nombre(Mascota)</label>
+                                    <input type="text" class="form-control" require name="Nombre_mascota" id="Nombre_mascota" placeholder="" value="<?php echo $Nombre_mascota ?>">
                                     <br>
                                 </div>
 
@@ -223,14 +223,14 @@
 
                                 </td>
 
-                                <td> <?php echo $mascota['id_mascotas']        ?> </td>
-                                <td> <?php echo $mascota['id_clientes']    ?> </td>
-                                <td> <?php echo $mascota['id_raza'] ?> </td>
-                                <td> <?php echo $mascota['Nombre'] ?> </td>
+                                <td> <?php echo $mascota['id_mascotas'],' ', $mascota['Nombre_mascota']      ?> </td>
+                                <td> <?php echo $mascota['id_clientes'], ' ', $mascota['Nombre'], ' ', $mascota['Apellido']    ?> </td>
+                                <td> <?php echo $mascota['id_raza'], ' ', $mascota['Nom_razas'] ?> </td>
+                                <td> <?php echo $mascota['Nombre_mascota'] ?> </td>
                                 <td> <?php echo $mascota['Sexo']    ?> </td>
                                 <td> <?php echo $mascota['Peso']    ?> </td>
                                 <td> <?php echo $mascota['Fecha_nacimiento']    ?> </td>
-                                <td> <?php echo $mascota['id_tipo_alimentacion']    ?> </td>
+                                <td> <?php echo $mascota['id_tipo_alimentacion'], ' ', $mascota['Nom_tipo_alim']    ?> </td>
 
 
 
@@ -239,7 +239,7 @@
                                     <input type="hidden" name="id_mascotas" value="<?php echo $mascota['id_mascotas'];  ?>">
                                     <input type="hidden" name="id_clientes" value="<?php echo $mascota['id_clientes'];  ?>">
                                     <input type="hidden" name="id_raza" value="<?php echo $mascota['id_raza'];  ?>">
-                                    <input type="hidden" name="Nombre" value="<?php echo $mascota['Nombre'];  ?>">
+                                    <input type="hidden" name="Nombre_mascota" value="<?php echo $mascota['Nombre_mascota'];  ?>">
                                     <input type="hidden" name="Sexo" value="<?php echo $mascota['Sexo'];  ?>">
                                     <input type="hidden" name="Peso" value="<?php echo $mascota['Peso'];  ?>">
                                     <input type="hidden" name="Fecha_nacimiento" value="<?php echo $mascota['Fecha_nacimiento'];  ?>">

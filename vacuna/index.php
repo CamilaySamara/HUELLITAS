@@ -1,4 +1,4 @@
-<?php include 'codeVeterinario.php'; ?>
+<?php include 'codeVacuna.php'; ?>
 
 <?php include("../paginas/head.php") ?>
 
@@ -33,20 +33,20 @@
 
 
                                 <!-- Selector de MASCOTA -->
-                                
+
                                 <div class="form-group col-md-12">
 
-                                    <label for="id_empleado">Empleado</label>
+                                    <label for="id_mascota">Mascota</label>
 
 
-                                    <select name="id_empleado" id="id_empleado" class="form-control">
+                                    <select name="id_mascota" id="id_mascota" class="form-control">
 
                                         <?php
 
-                                        if ($listaEmpleados->num_rows > 0) {
-                                            foreach ($listaEmpleados as $empleado) {
+                                        if ($listaMascotas->num_rows > 0) {
+                                            foreach ($listaMascotas as $mascota) {
                                                 echo " <option value='' hidden > Seleccione el Empleado</option> ";
-                                                echo " <option value='{$empleado['id']}'> {$empleado['id']} {$empleado['nombre']} {$empleado['apellidoP']} </option> ";
+                                                echo " <option value='{$mascota['id_mascotas']}'> {$mascota['id_mascotas']} {$mascota['Nombre_mascota']}  </option> ";
                                             }
                                         } else {
 
@@ -67,17 +67,17 @@
                                 <!-- Selector de TIPO VACUNA -->
                                 <div class="form-group col-md-12">
 
-                                    <label for="id_empleado">Empleado</label>
+                                    <label for="id_tipo_vacuna">Tipo Vacuna</label>
 
 
-                                    <select name="id_empleado" id="id_empleado" class="form-control">
+                                    <select name="id_tipo_vacuna" id="id_tipo_vacuna" class="form-control">
 
                                         <?php
 
-                                        if ($listaEmpleados->num_rows > 0) {
-                                            foreach ($listaEmpleados as $empleado) {
+                                        if ($listaTipoVacunas->num_rows > 0) {
+                                            foreach ($listaTipoVacunas as $vacuna) {
                                                 echo " <option value='' hidden > Seleccione el Empleado</option> ";
-                                                echo " <option value='{$empleado['id']}'> {$empleado['id']} {$empleado['nombre']} {$empleado['apellidoP']} </option> ";
+                                                echo " <option value='{$vacuna['id_tipo_vacuna']}'> {$vacuna['id_tipo_vacuna']} {$vacuna['Nom_tipo_vacuna']}  </option> ";
                                             }
                                         } else {
 
@@ -131,11 +131,11 @@
                     <tr>
 
 
-                        <th scope="col">Numero Documento</th>
-                        <th scope="col">Nombres</th>
+                        <th scope="col">Id Vacuna</th>
+                        <th scope="col">Id masCota</th>
 
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Tarjeta Profesional</th>
+                        <th scope="col">Id Tipo De Vacuna</th>
+
 
                         <th scope="col">Seleccionar</th>
                         <th scope="col">Eliminar</th>
@@ -146,9 +146,9 @@
 
                     <?php
                     /* Prefunto que si la variable listaVeterinario tiene algun contenido */
-                    if ($listaVeterinario->num_rows > 0) {
+                    if ($listaVacunas->num_rows > 0) {
 
-                        foreach ($listaVeterinario as $veterinario) {
+                        foreach ($listaVacunas as $vacuna) {
 
                     ?>
 
@@ -158,10 +158,10 @@
 
 
 
-                                <td> <?php echo $veterinario['id_veterinario']    ?> </td>
-                                <td> <?php echo $veterinario['Nom_veterinario'] ?> </td>
-                                <td> <?php echo $veterinario['Telefono'] ?> </td>
-                                <td> <?php echo $veterinario['Num_Profesional'] ?> </td>
+                                <td> <?php echo $vacuna['id_vacunas']    ?> </td>
+                                <td> <?php echo $vacuna['id_mascota'],' ', $vacuna['Nombre_mascota'] ?> </td>
+                                <td> <?php echo $vacuna['id_tipo_vacuna'], ' ', $vacuna['Nom_tipo_vacuna'] ?> </td>
+
 
 
 
@@ -170,11 +170,11 @@
 
 
 
-                                    <input type="hidden" name="id_veterinario" value="<?php echo $veterinario['id_veterinario'];  ?>">
-                                    <input type="hidden" name="Nom_veterinario" value="<?php echo $veterinario['Nom_veterinario'];  ?>">
+                                    <input type="hidden" name="id_vacunas" value="<?php echo $vacuna['id_vacunas'];  ?>">
+                                    <input type="hidden" name="id_mascota" value="<?php echo $vacuna['id_mascota'];  ?>">
 
-                                    <input type="hidden" name="Telefono" value="<?php echo $veterinario['Telefono'];  ?>">
-                                    <input type="hidden" name="Num_Profesional" value="<?php echo $veterinario['Num_Profesional'];  ?>">
+                                    <input type="hidden" name="id_tipo_vacuna" value="<?php echo $vacuna['id_tipo_vacuna'];  ?>">
+
 
 
                                     <td><input type="submit" class="btn btn-info" value="Seleccionar"></td>
